@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background: linear-gradient(45deg, #000, #ffcc00);
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 500px;
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer;
+}
+
+.calculator {
+    background-color: #1a1a1a;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffcc00;
+    width: 300px;
+    text-align: center;
+}
+
+.display {
+    background-color: #000;
+    color: #ffcc00;
+    font-size: 2em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    background-color: #333;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #ffcc00;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    background-color: #444;
+    box-shadow: 0 0 5px #ffcc00;
+    animation: glitch 0.3s;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(2px, -2px);
+    }
+    60% {
+        transform: translate(-2px, -2px);
+    }
+    80% {
+        transform: translate(2px, 2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-image {
+    0% {
+        transform: translate(0);
+        clip: rect(24px, 9999px, 75px, 0);
+    }
+    20% {
+        transform: translate(-5px, 5px);
+        clip: rect(56px, 9999px, 32px, 0);
+    }
+    40% {
+        transform: translate(5px, -5px);
+        clip: rect(12px, 9999px, 67px, 0);
+    }
+    60% {
+        transform: translate(-5px, -5px);
+        clip: rect(78px, 9999px, 45px, 0);
+    }
+    80% {
+        transform: translate(5px, 5px);
+        clip: rect(34px, 9999px, 23px, 0);
+    }
+    100% {
+        transform: translate(0);
+        clip: rect(24px, 9999px, 75px, 0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+#logo:hover {
+    animation: shake 0.5s, glitch-image 0.5s;
+}
+
+footer {
+    margin-top: 20px;
+    color: #ffcc00;
+}
